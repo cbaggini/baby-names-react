@@ -6,7 +6,7 @@ const NamesList = () => {
 	const babyNamesSorted = babyNamesData.sort((a,b) => a.name > b.name);
 	return (
 	<div className="names">
-		{babyNamesSorted.map((el) => <BabyName {... el}/>)}
+		{babyNamesSorted.map((el) => <BabyName key={el.id} {... el}/>)}
 	</div>
 	);
 }
