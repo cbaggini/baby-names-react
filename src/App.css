@@ -9,7 +9,9 @@
 }
 
 .favoriteNames > h2 {
+  margin: 0;
   margin-right: 2rem;
+  align-self: center;
 }
 
 .names,

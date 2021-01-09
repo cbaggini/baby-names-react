@@ -2,16 +2,7 @@ import React from "react";
 import BabyName from "./BabyName";
 
 
-const NamesList = ({filteredNames, setFilteredNames, babyNamesSorted, favorite, setFavorite, changeFavorite}) => {
-
-	const filterNames = (e) => {
-		if (e.target.value) {
-			const newNames = babyNamesSorted.filter(el => el.name.toLowerCase().includes(e.target.value.toLowerCase()))
-			setFilteredNames(newNames);
-		} else {
-			setFilteredNames(babyNamesSorted);
-		}	
-	}
+const NamesList = ({filteredNames, filterNames, setFilteredNames, babyNamesSorted, favorite, setFavorite, changeFavorite}) => {
 
 	return (
 	<>
@@ -19,7 +10,7 @@ const NamesList = ({filteredNames, setFilteredNames, babyNamesSorted, favorite, 
 		<input type="text" onChange={filterNames} placeholder="Search for names..."></input>
 	</div>
 	<div className="names">
-		{filteredNames.map((el) => <BabyName key={el.id} {... el} changeFavorite={changeFavorite}/>)}
+		{filteredNames.names.map((el) => <BabyName key={el.id} {... el} changeFavorite={changeFavorite}/>)}
 	</div>
 	</>
 	);
