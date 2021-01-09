@@ -8,7 +8,12 @@
   margin: 1rem;
 }
 
-.names {
+.favoriteNames > h2 {
+  margin-right: 2rem;
+}
+
+.names,
+.favoriteNames {
   display: flex;
   flex-wrap: wrap;
   margin: 2rem;

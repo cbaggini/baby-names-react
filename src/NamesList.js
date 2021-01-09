@@ -1,10 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import BabyName from "./BabyName";
-import babyNamesData from "./data/babyNamesData.json";
 
-const NamesList = () => {
-	const babyNamesSorted = babyNamesData.sort((a,b) => a.name > b.name);
-	const [filteredNames, setFilteredNames] = useState(babyNamesSorted);
+
+const NamesList = ({filteredNames, setFilteredNames, babyNamesSorted, favorite, setFavorite, changeFavorite}) => {
 
 	const filterNames = (e) => {
 		if (e.target.value) {
@@ -18,10 +16,10 @@ const NamesList = () => {
 	return (
 	<>
 	<div className="searchBar">
-		<input type="text" onChange={filterNames}></input>
+		<input type="text" onChange={filterNames} placeholder="Search for names..."></input>
 	</div>
 	<div className="names">
-		{filteredNames.map((el) => <BabyName key={el.id} {... el}/>)}
+		{filteredNames.map((el) => <BabyName key={el.id} {... el} changeFavorite={changeFavorite}/>)}
 	</div>
 	</>
 	);

@@ -1,8 +1,8 @@
 import React from "react";
 
-const BabyName = (props) => {
-	const symbol = props.sex === "m" ? "fa fa-mars" : "fa fa-venus";
-	return <p className={props.sex}><i className={symbol} style={{fontSize: "24px"}}></i> {props.name}</p>
+const BabyName = ({sex, name, changeFavorite}) => {
+	const symbol = sex === "m" ? "fa fa-mars" : "fa fa-venus";
+	return <button className={sex} onClick={changeFavorite}><i className={symbol} style={{fontSize: "24px", pointerEvents: "none"}}></i>{name}</button>
 }
 
 export default BabyName;
