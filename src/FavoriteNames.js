@@ -1,7 +1,7 @@
 import React from 'react';
 import BabyName from "./BabyName";
 
-const FavoriteNames = ({filteredNames, setFilteredNames, babyNamesSorted, favorite, setFavorite, changeFavorite}) => {
+const FavoriteNames = ({favorite, changeFavorite}) => {
 	//console.log(favorite)
 	return (
 		<div className="favoriteNames">

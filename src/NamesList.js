@@ -1,14 +1,13 @@
 import React from "react";
 import BabyName from "./BabyName";
+import SearchBar from "./SearchBar";
 
 
-const NamesList = ({filteredNames, filterNames, setFilteredNames, babyNamesSorted, favorite, setFavorite, changeFavorite}) => {
+const NamesList = ({filteredNames, filterNames, changeFavorite, toggleGenders}) => {
 
 	return (
 	<>
-	<div className="searchBar">
-		<input type="text" onChange={filterNames} placeholder="Search for names..."></input>
-	</div>
+	<SearchBar filterNames={filterNames} toggleGenders={toggleGenders}/>
 	<div className="names">
 		{filteredNames.names.map((el) => <BabyName key={el.id} {... el} changeFavorite={changeFavorite}/>)}
 	</div>

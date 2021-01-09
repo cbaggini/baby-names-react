@@ -24,7 +24,8 @@
 }
 
 .m,
-.f {
+.f,
+.mf {
   border: 1px solid black;
   border-radius: 3px;
   padding: 10px;
@@ -37,4 +38,8 @@
 
 .f {
   background-color: rgb(78, 167, 78);
+}
+
+.selected {
+  box-shadow: 2px 5px 3px #888888;
 }
